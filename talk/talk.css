@@ -3,61 +3,6 @@ body {
   height: 100vh;
 }
 
-/* user panel */
-
-.userPanel {
-  position: fixed;
-  height: 7vh;
-  bottom: 1vh;
-  left: 1vh;
-  border: 1px solid black;
-  display: flex;
-  align-items: center;
-  max-width: 70vh;
-  width: auto;
-  font-size: auto;
-  background-color: gray;
-}
-
-.userPanel .pfp {
-  height: 100%;
-}
-
-.userPanel .userInfo {
-  display: flex;
-  flex-direction: column;
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.userPanel .name {
-  margin-left: 20px;
-  margin-right: 50px;
-  min-width: 50px;
-
-  font-size: 3vh;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.userPanel .status {
-  margin-left: 20px;
-  margin-top: auto;
-  font-size: 2vh;
-  min-width: 1px;
-  font-weight: 400;
-  margin-top: -2vh;
-  color: rgb(109, 170, 109);
-}
-
-.userPanel .settings {
-  height: 80%;
-  margin-left: auto;
-  margin-right: 20px;
-}
 /* website */
 
 .container {
@@ -65,54 +10,21 @@ body {
   height: 100vh;
 }
 
-/* LEFT MENU */
-
-.leftMenu {
-  width: 11vh;
-  height: 100vh;
-  min-width: 7vh;
-  background-color: antiquewhite;
-  overflow: auto;
-}
-
-.leftMenuList {
-  text-align: center;
-  padding: 0;
-  list-style: none;
-}
-
-.leftMenuList li {
-  margin-top: 10px;
-  border-radius: 20%;
-}
-
-.leftMenuList li:hover {
-  background-color: gray;
-  transition: all 1s;
-
-  width: 110%;
-}
-
-.leftMenuList .none:hover {
-  width: 100%;
-  background-color: white;
-}
-
-.leftMenuList img {
-  width: 80%;
-  max-width: 80px;
+img {
+  cursor: pointer;
 }
 
 /* CHATS */
 
 .chatsContainer {
-  background-color: rgba(0, 255, 255, 0.432);
+  background-color: #c8bdff;
   height: 100vh;
   width: 800px;
   min-width: 100px;
   display: flex;
   flex-direction: column;
   overflow: auto;
+  border-radius: 10px;
 }
 
 .chatsContainer .chatsTop {
@@ -163,7 +75,9 @@ body {
 }
 
 @media only screen and (max-width: 800px) {
-  /* zrobic jakikolwiek wyglad na telefonie  test*/
+  .friendList li {
+    width: 550%;
+  }
 }
 
 .friendList .friendInfo {
@@ -208,10 +122,14 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
+
+  border-radius: 10px;
 }
 
 .chat .chatHeader {
-  background-color: rgb(150, 118, 180);
+  background-color: rgb(240, 236, 236);
+
+  border-radius: 10px;
   height: 10vh;
   display: flex;
 
@@ -223,6 +141,16 @@ body {
 }
 .chatHeader img {
   height: 100%;
+}
+
+.chatHeader .phoneIcon {
+  height: 70%;
+  margin-right: 20px;
+  margin-left: auto;
+}
+.chatHeader .settings {
+  margin-right: 20px;
+  height: 80%;
 }
 
 .chatHeaderInfo {
@@ -241,24 +169,41 @@ body {
   font-size: 2vh;
   font-weight: 400;
   margin-top: -2vh;
-  color: rgba(126, 221, 134, 0.521);
+  color: rgba(53, 156, 62, 0.521);
 }
 
 /* MESSAGES */
 .chat .messages {
-  background-color: rgb(190, 170, 170);
+  background-color: rgb(192, 172, 172);
   height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
 }
-
+.chat .photo {
+  max-width: 64vh;
+  max-height: 400px;
+  margin-left: 10vh;
+  border-radius: 15px;
+}
 .chat .yourMessage {
+  word-wrap: break-word;
+  word-break: break-word;
   margin-left: auto;
-  text-align: right;
   max-width: 70%;
+  width: auto;
+  margin-right: 10px;
+  margin: 4px 0 4px auto;
+  width: fit-content;
+
+  white-space: normal;
+  text-overflow: ellipsis;
 }
 
 .chat .yourMessage p {
   background-color: gray;
   display: inline-block;
+  text-align: left;
   width: auto;
   padding: 2vh;
   font-size: 3vh;
@@ -267,18 +212,30 @@ body {
 }
 
 .chat .friendMessage {
+  word-wrap: break-word;
+  word-break: break-word;
   margin-right: auto;
-  text-align: left;
+  max-width: 70%;
+  width: auto;
+  margin-right: 10px;
+  margin: 4px auto 4px 0;
+  width: fit-content;
 
-  margin-left: 10px;
+  white-space: normal;
+  text-overflow: ellipsis;
 }
 
-.chat .friendMessage img {
+.chat .friendMessage .pfp {
   height: 7vh;
 }
 
+.chat .friendMessage .photo {
+  max-height: 800px;
+  display: block;
+}
+
 .chat .friendMessage p {
-  background-color: rgb(223, 120, 180);
+  background-color: rgb(192, 228, 172);
   display: inline-block;
   width: auto;
   padding: 2vh;
@@ -287,8 +244,10 @@ body {
   max-width: 70%;
 }
 
+/* CHAT INPUT */
 .chat .chatInput {
-  background-color: chocolate;
+  border-radius: 10px;
+  background-color: rgb(240, 236, 236);
   margin-top: auto;
   height: 10vh;
   display: flex;
@@ -313,4 +272,20 @@ body {
   border-radius: 20px;
   border: none;
   background-color: rgb(212, 209, 209);
+}
+
+@media only screen and (max-width: 800px) {
+  .chatInput img {
+    width: 8%;
+    margin-left: 5px;
+  }
+
+  .chatInput input {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  .chatInput .fastEmoji {
+    font-size: 4vh;
+  }
 }
