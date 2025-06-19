@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TALK</title>
+    <link rel="stylesheet" href="talk.css" />
+  </head>
+  <body>
+    <!-- W INNYM PLIKU TO I INCLUDE -->
+    <div class="userPanel">
+      <img src="../icons/githubIcon.png" alt="user img" class="pfp" />
+      <div class="userInfo">
+        <h1 class="name">Zantar</h1>
+        <p class="status">online</p>
+      </div>
+      <img
+        src="../icons/settingsIcon.png"
+        alt="settings img"
+        class="settings"
+      />
+    </div>
+    <!--  -->
+
+    <div class="container">
+      <aside class="leftMenu">
+        <ul class="leftMenuList">
+          <li>
+            <img src="../icons/chatIcon.png" alt="chat Icon" />
+          </li>
+          <li>
+            <img src="../icons/friendsIcon.png" alt="friend Icon" />
+          </li>
+          <li>
+            <img src="../icons/notificationIcon.png" alt="notification Icon" />
+          </li>
+          <li>
+            <img src="../icons/homeIcon.png" alt="home Icon" />
+          </li>
+          <li>
+            <img src="../icons/settingsIcon.png" alt="home Icon" />
+          </li>
+
+          <li class="none">
+            <img src="../icons/none.png" alt="" />
+            <img src="../icons/none.png" alt="" />
+            <img src="../icons/none.png" alt="" />
+            <img src="../icons/none.png" alt="" />
+            <img src="../icons/none.png" alt="" />
+            <img src="../icons/none.png" alt="" />
+          </li>
+
+          <li>
+            <img src="../icons/githubIcon.png" alt="github icon" />
+          </li>
+          <li>
+            <img src="../icons/logoutIcon.png" alt="logout icon" />
+          </li>
+        </ul>
+      </aside>
+
+      <section class="chatsContainer">
+        <div class="chatsTop">
+          <h1>Chats</h1>
+          <input
+            type="text"
+            name="searchFriends"
+            id="searchFriends"
+            class="searchFriends"
+            placeholder="search friends"
+          />
+        </div>
+
+        <div class="chatsFriends">
+          <ul class="friendList">
+            <li id="zaznaczony">
+              <img src="../icons/githubIcon.png" alt="pfp" />
+              <div class="friendInfo">
+                <h1 class="friendName">Jeff Bezos</h1>
+                <p class="friendMsg">you are the best programmer man! 3m</p>
+              </div>
+            </li>
+
+            <li>
+              <img src="../icons/githubIcon.png" alt="pfp" />
+              <div class="friendInfo">
+                <h1 class="friendName">Elon Musk</h1>
+                <p class="friendMsg">I hate joe biden 10m</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- chat -->
+      <main class="chat">
+        <header class="chatHeader">
+          <img src="../icons/githubIcon.png" alt="pfp" />
+          <div class="chatHeaderInfo">
+            <h1 class="nameFriendHeader">Jeff Bezos</h1>
+            <p class="statusFriendHeader">online now</p>
+          </div>
+        </header>
+
+        <section class="messages">
+          <div id="yourMessage" class="yourMessage">
+            <p class="yourMessageText">Hello jeff bezos</p>
+          </div>
+
+          <div id="friendMessage" class="friendMessage">
+            <img src="../icons/githubIcon.png" alt="" />
+            <p class="friendMessageText">you are the best programmer man!</p>
+          </div>
+
+          <div id="yourMessage" class="yourMessage">
+            <p class="yourMessageText">I know jeff</p>
+          </div>
+        </section>
+
+        <footer class="chatInput">
+          <img src="../icons/fileIcon.png" alt="upload a file!" />
+          <img src="../icons/gifIcon.png" alt="upload a gif!" />
+          <img src="../icons/randomIcon.png" alt="random subject" />
+          <input
+            type="text"
+            name="inputChat"
+            id="inputChat"
+            placeholder="send a message!"
+          />
+          <p class="fastEmoji">😎</p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
