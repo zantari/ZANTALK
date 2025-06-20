@@ -93,9 +93,10 @@
 
           <div id="friendMessage" class="friendMessage">
             <img src="../icons/githubIcon.png" alt="" class="pfp"/>
-            <p class="friendMessageText">i am playing my favourite game! I love it!</p>
-            <img src="../mathbrainscreen.jpg" alt="" class="photo">
+            <p class="friendMessageText">i am playing my favourite game! Math brain!</p>
           </div>
+
+          
         </section>
 
 
@@ -104,7 +105,7 @@
 
 
         <footer class="chatInput">
-          <img src="../icons/fileIcon.png" alt="upload a file!" id="photoUpload" />
+          <input type="file" name="photoInput" id="photoInput" accept="image/*"><img src="../icons/fileIcon.png" alt="upload a file!" id="photoUpload" />
           <img src="../icons/gifIcon.png" alt="upload a gif!" id="gifUpload"/>
           <img src="../icons/randomIcon.png" alt="random subject" id="randomSubject" />
           <input
