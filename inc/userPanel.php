@@ -55,10 +55,29 @@
   margin-right: 20px;
 }
 
+.userPanel .settings:hover{
+  background-color: rgb(37, 37, 37);
+}
+
 @media (max-width: 400px) {
   .userPanel {
+    width: 7vh;
+
+  }
+  .pfp{
     display: none;
   }
+  #settingsIcon{
+    display: none;
+  }
+  #hideIcon{
+    margin: 5%;
+  }
+  .userInfo{
+    display: none;
+  }
+
+ 
 }
 
 
@@ -72,16 +91,55 @@
 
 
 
-<div class="userPanel">
-      <img src="../icons/githubIcon.png" alt="user img" class="pfp" />
-      <div class="userInfo">
+<div class="userPanel" id="userPanel">
+      <img src="../icons/githubIcon.png" alt="user img" class="pfp" id="pfp"/>
+      <div class="userInfo" id="userInfo">
         <h1 class="name">Zantar</h1>
         <p class="status">online</p>
       </div>
       <img
         src="../icons/settingsIcon.png"
-        alt="settings img"
+        alt="settings Icon"
+        id="settingsIcon"
         class="settings"
+        onClick="userPanelSettings()"
       />
-      <img src="../icons/eyeIconno.png" alt="hide icon" class="settings" />
+      <img src="../icons/eyeIconno.png" alt="hide icon" class="settings" id="hideIcon" />
 </div>
+
+<script>
+  const hideIcon = document.getElementById("hideIcon");
+  const userPanel = document.getElementById("userPanel")
+  const pfp = document.getElementById("pfp");
+  const settingsIcon = document.getElementById("settingsIcon");
+  const userInfo = document.getElementById("userInfo");
+
+  
+
+
+  hideIcon.addEventListener("click", (e) => {
+    if(pfp.style.display!=="none"){
+    userPanel.style.width="7vh";
+    pfp.style.display="none";
+    settingsIcon.style.display="none";
+    userInfo.style.display="none";
+    hideIcon.src="../icons/eyeIcon.png";
+    hideIcon.style.margin="10%";
+    }
+    else{
+      userPanel.style.width="auto";
+      pfp.style.display = "block";
+      settingsIcon.style.display="block";
+      userInfo.style.display="flex";
+      hideIcon.src="../icons/eyeIconno.png";
+      hideIcon.style.marginLeft = '0px';
+      hideIcon.style.marginRight = '20px';
+      
+    }
+  })
+
+
+  function userPanelSettings(){
+    alert("i need to do simple settings like change pfp or nickname or status")
+  }
+</script>

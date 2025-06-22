@@ -17,7 +17,13 @@ img {
 /* CHATS */
 
 .chatsContainer {
-  background-color: #c8bdff;
+  background-image: radial-gradient(
+    circle at center,
+
+    hwb(30 84% 8%),
+    rgb(230, 221, 210),
+    rgb(225, 205, 180)
+  );
   height: 100vh;
   width: 800px;
   min-width: 100px;
@@ -68,18 +74,16 @@ img {
 .friendList li {
   background-color: rgb(182, 173, 173);
   height: 8vh;
-  width: 98%;
+  width: auto;
   display: flex;
-  margin-left: -20px;
+  margin-left: -15px;
+  margin-right: 15px;
   align-items: center;
   margin-top: 20px;
   border-radius: 15px;
 }
 
 @media only screen and (max-width: 800px) {
-  .friendList li {
-    width: 550%;
-  }
 }
 
 .friendList .friendInfo {
