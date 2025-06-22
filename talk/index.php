@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TALK</title>
     <link rel="stylesheet" href="talk.css" />
+    <link rel="shortcut icon" href="../icons/talk.jfif" type="image/x-icon">
   </head>
   <body>
     <?php
@@ -86,9 +87,7 @@
           <div id="yourMessage" class="yourMessage">
             <p class="yourMessageText">I know jeff what are you doing today</p>
           </div>
-          <div id="yourMessage" class="yourMessage">
-            <p class="yourMessageText">I know jeff what are you doing today</p>
-          </div>
+          
 
 
           <div id="friendMessage" class="friendMessage">
@@ -96,6 +95,13 @@
             <p class="friendMessageText">i am playing my favourite game! Math brain!</p>
           </div>
 
+          
+
+
+
+          
+
+          
           
         </section>
 

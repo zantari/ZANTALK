@@ -25,6 +25,8 @@ img {
   flex-direction: column;
   overflow: auto;
   border-radius: 10px;
+  resize: horizontal;
+  overflow: auto;
 }
 
 .chatsContainer .chatsTop {
@@ -208,6 +210,23 @@ img {
   padding: 2vh;
   font-size: 3vh;
   border-radius: 30px;
+  margin-right: 10px;
+}
+
+.chat .myPhotoChat,
+#myPhotoChat {
+  max-width: 40%;
+  float: right;
+  margin: 0;
+  border-radius: 20px;
+}
+
+.chat .yourMessageImg {
+  margin: 0;
+  border-radius: 35px;
+  background-color: gray;
+  padding: 2vh;
+  display: inline-block;
   margin-right: 10px;
 }
 
