@@ -108,8 +108,8 @@ function sendMessage(e) {
         "I don't know",
         "Yes! I love it!",
         "OK, how are you today?",
-        "I am Jeff Bezos",
-        "Amazon is the best!",
+        "I am S38A",
+        "Terraria is the best!",
         "Hello!",
         "WOOOHOOO!",
         "😎",
@@ -119,6 +119,7 @@ function sendMessage(e) {
         "I love ZANTALK! ",
         "If I were a fruit, I’d definitely be a potato! 🥔",
         "I LOVE STAR WARS!",
+        "What?",
       ];
       randomAnswer = Math.floor(Math.random() * answers.length);
 

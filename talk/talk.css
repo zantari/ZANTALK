@@ -83,9 +83,6 @@ img {
   border-radius: 15px;
 }
 
-@media only screen and (max-width: 800px) {
-}
-
 .friendList .friendInfo {
   display: flex;
   flex-direction: column;
@@ -303,6 +300,7 @@ img {
   border-radius: 20px;
   border: none;
   background-color: rgb(212, 209, 209);
+  font-size: 2vh;
 }
 
 .chatInput #photoInput {

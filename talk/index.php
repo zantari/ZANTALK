@@ -9,12 +9,12 @@
   </head>
   <body>
     <?php
-  include("../inc/userPanel.php");
+  include("../inc/userPanel.html");
 
 ?>
     <div class="container">
       <?php
-  include("../inc/leftMenu.php");
+  include("../inc/leftMenu.html");
 
 ?>
 
@@ -35,7 +35,7 @@
             <li id="zaznaczony">
               <img src="../icons/githubIcon.png" alt="pfp" />
               <div class="friendInfo">
-                <h1 class="friendName">Jeff Bezos</h1>
+                <h1 class="friendName">S38AI</h1>
                 <p class="friendMsg">you are the best programmer man! 3m</p>
               </div>
             </li>
@@ -55,7 +55,7 @@
         <header class="chatHeader">
           <img src="../icons/githubIcon.png" alt="pfp" />
           <div class="chatHeaderInfo">
-            <h1 class="nameFriendHeader">Jeff Bezos</h1>
+            <h1 class="nameFriendHeader">S38AI</h1>
             <p class="statusFriendHeader">online now</p>
           </div>
 
@@ -71,7 +71,7 @@
 
 
           <div id="yourMessage" class="yourMessage">
-            <p class="yourMessageText">Hello jeff bezos</p>
+            <p class="yourMessageText">Hello my friend</p>
           </div>
 
 
@@ -85,7 +85,7 @@
 
 
           <div id="yourMessage" class="yourMessage">
-            <p class="yourMessageText">I know jeff what are you doing today</p>
+            <p class="yourMessageText">I know! What are you doing today</p>
           </div>
           
 

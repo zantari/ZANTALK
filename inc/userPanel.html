@@ -1,0 +1,339 @@
+<style>
+  .userPanel {
+    position: fixed;
+    height: 7vh;
+    bottom: 1vh;
+    left: 1vh;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    max-width: 70vh;
+    width: auto;
+    font-size: auto;
+    background-color: gray;
+    border-radius: 10px;
+  }
+
+  .userPanel .pfp {
+    height: 100%;
+  }
+
+  .userPanel .userInfo {
+    display: flex;
+    flex-direction: column;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .userPanel .name {
+    margin-left: 20px;
+    margin-right: 50px;
+    min-width: 50px;
+
+    font-size: 3vh;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .userPanel .status {
+    margin-left: 20px;
+    margin-top: auto;
+    font-size: 2vh;
+    min-width: 1px;
+    font-weight: 400;
+    margin-top: -2vh;
+    color: rgb(109, 170, 109);
+  }
+
+  .userPanel .settings {
+    height: 80%;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+
+  .userPanel .settings:hover {
+    background-color: rgb(37, 37, 37);
+  }
+
+  @media (max-width: 400px) {
+    .userPanel {
+      width: 7vh;
+    }
+    .pfp {
+      display: none;
+    }
+    #settingsIcon {
+      display: none;
+    }
+    #hideIcon {
+      margin: 5%;
+    }
+    .userInfo {
+      display: none;
+    }
+  }
+
+  /* USER SETTINGS */
+  #userSettingsDiv {
+    position: fixed;
+    display: none;
+    bottom: 10vh;
+    left: 1vh;
+
+    width: 40vh;
+    height: 60%;
+
+    background-color: rgba(128, 128, 128, 0.952);
+    border: 0.3vh solid black;
+    z-index: 123989321;
+
+    border-radius: 10px;
+  }
+
+  #userSettingsDiv header {
+    width: 40vh;
+    height: 15vh;
+  }
+  #userSettingsDiv header img {
+    width: 40vh;
+    height: 15vh;
+    border-radius: 15px;
+  }
+
+  #userSettingsDiv #pfpSettings {
+    width: 40%;
+    height: 20%;
+    margin-top: 1vh;
+    text-align: center;
+    float: left;
+  }
+
+  #userSettingsDiv #pfpSettings img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  #userSettingsDiv #userNickname {
+    background-color: rgba(192, 228, 172, 0.281);
+    margin-top: 1vh;
+    border-radius: 15px;
+    width: 60%;
+    font-size: auto;
+    overflow: auto;
+    height: 20%;
+    float: left;
+    margin-bottom: 3vh;
+  }
+
+  #userSettingsDiv #yourNickname {
+    font-size: 4vh;
+    margin-top: 2%;
+    margin-bottom: 0;
+    margin-left: 2%;
+    word-wrap: break-word;
+  }
+
+  #userSettingsDiv #yourID {
+    font-size: 2vh;
+    margin-top: 0;
+    margin-left: 2%;
+    color: rgba(0, 0, 0, 0.425);
+  }
+
+  #userSettingsDiv #nicknameSettings {
+    border: 0.1vh solid black;
+    display: flex;
+    width: 80%;
+    height: 4vh;
+    margin-top: 3vh;
+    margin-left: 10%;
+    margin-right: 10%;
+
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+    padding-top: 2%;
+  }
+
+  #nicknameSettings input {
+    width: 80%;
+
+    height: 2vh;
+    font-size: 2vh;
+    border-radius: 4vh;
+    border: none;
+    margin-left: 10%;
+  }
+
+  #nicknameSettings label {
+    font-size: 2vh;
+  }
+
+  #visibilitySettings {
+    border: 0.1vh solid black;
+    display: flex;
+    width: 80%;
+    height: 4vh;
+    margin-top: 3vh;
+    margin-left: 10%;
+    margin-right: 10%;
+
+    box-sizing: border-box;
+    text-align: left;
+    justify-content: left;
+    padding-top: 2%;
+  }
+
+  #visibilitySettings label {
+    font-size: 2vh;
+  }
+
+  #visibilitySettings select {
+    width: 80%;
+    margin-top: -1.5%;
+    height: 3vh;
+    font-size: 2vh;
+    border-radius: 10vh;
+    border: none;
+    margin-left: 10%;
+    background-color: rgba(0, 255, 0, 0.219);
+  }
+
+  #changeAvatarBtn {
+    width: 80%;
+    margin-top: -1.5%;
+    height: 3vh;
+    font-size: 1.8vh;
+    border-radius: 10vh;
+    border: 0.1vh solid black;
+    margin-left: 10%;
+    background-color: rgb(192, 228, 172);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  #save {
+    border: 0.1vh solid black;
+    display: flex;
+    width: 90%;
+    height: 7vh;
+    background-color: rgb(78, 241, 78);
+    margin-top: 3vh;
+    margin-left: 5%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding-top: 2%;
+    font-size: 4vh;
+    border-radius: 8vh;
+  }
+</style>
+
+<div class="userPanel" id="userPanel">
+  <img src="../icons/githubIcon.png" alt="user img" class="pfp" id="pfp" />
+  <div class="userInfo" id="userInfo">
+    <h1 class="name">Zantar</h1>
+    <p class="status">online</p>
+  </div>
+  <img
+    src="../icons/settingsIcon.png"
+    alt="settings Icon"
+    id="settingsIcon"
+    class="settings"
+    onClick="userPanelSettings()"
+  />
+  <img
+    src="../icons/eyeIconno.png"
+    alt="hide icon"
+    class="settings"
+    id="hideIcon"
+  />
+</div>
+
+<!-- USER SETTINGS -->
+<div id="userSettingsDiv">
+  <header class="background" id="background">
+    <img src="../mathbrainscreen.jpg" alt="" />
+  </header>
+
+  <div id="pfpSettings" class="pfpSettings">
+    <img src="../icons/githubIcon.png" alt="" />
+  </div>
+
+  <div id="userNickname">
+    <h2 id="yourNickname">Zantar</h2>
+    <p id="yourID">Zantar#1</p>
+  </div>
+
+  <div id="nicknameSettings">
+    <label for="changeNickname">Nickname: </label>
+    <input type="text" id="changeNickname" value="Zantar" />
+  </div>
+
+  <div id="visibilitySettings">
+    <label for="visibility">Visibility: </label>
+    <select name="visibility" id="visibility">
+      <option style="background-color: green" value="online">online</option>
+      <option style="background-color: red" value="dnd">do not disturb</option>
+      <option style="background-color: gray" value="offline">offline</option>
+    </select>
+  </div>
+
+  <div id="visibilitySettings">
+    <label for="changePFP">Avatar: </label>
+    <button id="changeAvatarBtn">Change Avatar</button>
+  </div>
+
+  <button id="save" class="save">SAVE</button>
+</div>
+
+<script>
+  const hideIcon = document.getElementById("hideIcon");
+  const userPanel = document.getElementById("userPanel");
+  const pfp = document.getElementById("pfp");
+  const settingsIcon = document.getElementById("settingsIcon");
+  const userInfo = document.getElementById("userInfo");
+  const userSettingsDiv = document.getElementById("userSettingsDiv");
+
+  if (getComputedStyle(pfp).display == "none") {
+    userPanel.style.width = "7vh";
+    pfp.style.display = "none";
+    settingsIcon.style.display = "none";
+    userInfo.style.display = "none";
+    hideIcon.src = "../icons/eyeIcon.png";
+    hideIcon.style.margin = "10%";
+  }
+
+  hideIcon.addEventListener("click", (e) => {
+    if (pfp.style.display !== "none") {
+      userPanel.style.width = "7vh";
+      pfp.style.display = "none";
+      settingsIcon.style.display = "none";
+      userInfo.style.display = "none";
+      hideIcon.src = "../icons/eyeIcon.png";
+      hideIcon.style.margin = "10%";
+    } else {
+      userPanel.style.width = "auto";
+      pfp.style.display = "block";
+      settingsIcon.style.display = "block";
+      userInfo.style.display = "flex";
+      hideIcon.src = "../icons/eyeIconno.png";
+      hideIcon.style.marginLeft = "0px";
+      hideIcon.style.marginRight = "20px";
+    }
+  });
+
+  function userPanelSettings() {
+    if (userSettingsDiv.style.display === "block") {
+      userSettingsDiv.style.display = "none";
+    } else {
+      userSettingsDiv.style.display = "block";
+    }
+  }
+</script>
