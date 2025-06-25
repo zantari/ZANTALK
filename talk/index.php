@@ -112,7 +112,7 @@
 
         <footer class="chatInput">
           <input type="file" name="photoInput" id="photoInput" accept="image/*"><img src="../icons/fileIcon.png" alt="upload a file!" id="photoUpload" />
-          <img src="../icons/gifIcon.png" alt="upload a gif!" id="gifUpload"/>
+          <input type="file" accept=".gif,image/gif" id="gifInput"><img src="../icons/gifIcon.png" alt="upload a gif!" id="gifUpload"/> 
           <img src="../icons/randomIcon.png" alt="random subject" id="randomSubject" />
           <input
             type="text"

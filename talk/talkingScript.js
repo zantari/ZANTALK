@@ -120,6 +120,7 @@ function sendMessage(e) {
         "If I were a fruit, I’d definitely be a potato! 🥔",
         "I LOVE STAR WARS!",
         "What?",
+        "What?",
       ];
       randomAnswer = Math.floor(Math.random() * answers.length);
 
@@ -141,7 +142,7 @@ function sendMessage(e) {
       newMessage.append(friendMessageText);
 
       newMessage.scrollIntoView();
-    }, 3000);
+    }, 1500);
   } else {
     document.getElementById("send").replaceWith(fastEmoji);
     setTimeout(() => {
@@ -218,6 +219,77 @@ photoUpload.addEventListener("click", (e) => {
     yourMessage.scrollIntoView();
   };
 });
+
+//GIF UPLOAD
+
+gifUpload.addEventListener("click", (e) => {
+  const gifInput = document.getElementById("gifInput");
+  const gifObj = document.createElement("img");
+
+  gifUpload.style.backgroundColor = "gray";
+  setTimeout(() => {
+    gifInput.click();
+    gifUpload.style.background = "none";
+  }, 100);
+
+  gifInput.onchange = (e) => {
+    const file = e.target.files[0];
+
+    const fileImg = document.createElement("img");
+    fileImg.src = URL.createObjectURL(file);
+    fileImg.id = "myPhotoChat";
+    fileImg.className = "myPhotoChat";
+
+    const yourMessage = document.createElement("div");
+    yourMessage.className = "yourMessage";
+    yourMessage.id = "yourMessage";
+
+    const yourMessageImg = document.createElement("div");
+    yourMessageImg.className = "yourMessageImg";
+
+    yourMessageImg.innerHTML = "<p>you sent a GIF</p>";
+
+    messagesDiv.append(yourMessage);
+
+    yourMessage.append(yourMessageImg);
+
+    yourMessageImg.append(fileImg);
+
+    setTimeout(() => {
+      const answers = [
+        "Cool gif man!",
+        "I LOVE THIS GIF!",
+        "hahaha",
+        "LOOOOOOOL",
+        "<img src='../clapping.gif'>",
+      ];
+
+      randomAnswer = Math.floor(Math.random() * answers.length);
+
+      const jeffPhoto = document.createElement("img");
+      jeffPhoto.src = "../icons/githubIcon.png";
+      jeffPhoto.className = "pfp";
+      const newMessage = document.createElement("div");
+      newMessage.className = "friendMessage";
+      newMessage.id = "friendMessage";
+
+      messagesDiv.append(newMessage);
+      newMessage.append(jeffPhoto);
+      const friendMessageText = document.createElement("p");
+      friendMessageText.className = "friendMessageText";
+      friendMessageText.id = "friendMessageText";
+      friendMessageText.innerHTML = answers[randomAnswer];
+
+      newMessage.append(friendMessageText);
+
+      newMessage.scrollIntoView();
+    }, 2000);
+
+    yourMessage.scrollIntoView();
+  };
+});
+
+//RANDOM SUBJECT
 
 randomSubject.addEventListener("click", (e) => {
   const randomSubject = [

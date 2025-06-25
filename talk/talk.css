@@ -311,6 +311,15 @@ img {
   background-color: gray;
 }
 
+.chatInput #gifInput {
+  position: fixed;
+  width: 8vh;
+  left: 40%;
+  display: none;
+  height: 10vh;
+  background-color: gray;
+}
+
 @media only screen and (max-width: 800px) {
   .chatInput img {
     width: 8%;
