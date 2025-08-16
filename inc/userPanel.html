@@ -233,13 +233,20 @@
     font-size: 4vh;
     border-radius: 8vh;
   }
+
+  #changeAvatar {
+    display: none;
+  }
+  #changeBg {
+    display: none;
+  }
 </style>
 
 <div class="userPanel" id="userPanel">
   <img src="../icons/githubIcon.png" alt="user img" class="pfp" id="pfp" />
   <div class="userInfo" id="userInfo">
-    <h1 class="name">Zantar</h1>
-    <p class="status">online</p>
+    <h1 class="name" id="yourNick">Zantar</h1>
+    <p class="status" id="yourStatus">online</p>
   </div>
   <img
     src="../icons/settingsIcon.png"
@@ -257,9 +264,11 @@
 </div>
 
 <!-- USER SETTINGS -->
+
 <div id="userSettingsDiv">
   <header class="background" id="background">
-    <img src="../mathbrainscreen.jpg" alt="" />
+    <input type="file" id="changeBg" accept="image/*" />
+    <img src="../mathbrainscreen.jpg" alt="" id="backgroundImg" />
   </header>
 
   <div id="pfpSettings" class="pfpSettings">
@@ -287,7 +296,11 @@
 
   <div id="visibilitySettings">
     <label for="changePFP">Avatar: </label>
-    <button id="changeAvatarBtn">Change Avatar</button>
+    <input type="file" id="changeAvatar" accept="image/*" /><button
+      id="changeAvatarBtn"
+    >
+      Change Avatar
+    </button>
   </div>
 
   <button id="save" class="save">SAVE</button>
@@ -300,6 +313,13 @@
   const settingsIcon = document.getElementById("settingsIcon");
   const userInfo = document.getElementById("userInfo");
   const userSettingsDiv = document.getElementById("userSettingsDiv");
+  const saveButton = document.getElementById("save");
+  const yourStatus = document.getElementById("yourStatus");
+  const changeAvatarBtn = document.getElementById("changeAvatarBtn");
+  const changeAvatar = document.getElementById("changeAvatar");
+
+  const backgroundImg = document.getElementById("backgroundImg");
+  const changeBg = document.getElementById("changeBg");
 
   if (getComputedStyle(pfp).display == "none") {
     userPanel.style.width = "7vh";
@@ -336,4 +356,79 @@
       userSettingsDiv.style.display = "block";
     }
   }
+
+  let newAvatar = null;
+  changeAvatarBtn.addEventListener("click", (e) => {
+    changeAvatar.style.display = "block";
+
+    setTimeout(() => {
+      changeAvatar.click();
+      changeAvatar.style.display = "none";
+    }, 100);
+
+    changeAvatar.onchange = (e) => {
+      const file = e.target.files[0];
+
+      const reader = new FileReader();
+      reader.onload = function (event) {
+        newAvatar = event.target.result;
+
+        document.querySelector("#pfpSettings img").src = newAvatar;
+      };
+
+      reader.readAsDataURL(file);
+    };
+  });
+
+  document.getElementById("changeNickname").onchange = (e) => {
+    document.getElementById("yourNickname").textContent =
+      document.getElementById("changeNickname").value;
+
+    document.getElementById("yourID").textContent =
+      document.getElementById("changeNickname").value + "#1";
+  };
+
+  backgroundImg.addEventListener("click", (e) => {
+    changeBg.style.display = "block";
+    setTimeout(() => {
+      changeBg.click();
+      changeBg.style.display = "none";
+    }, 10);
+
+    changeBg.onchange = (e) => {
+      const file = e.target.files[0];
+
+      const reader = new FileReader();
+      reader.onload = function (event) {
+        let newBg = event.target.result;
+        backgroundImg.src = newBg;
+      };
+      reader.readAsDataURL(file);
+    };
+  });
+
+  saveButton.addEventListener("click", (e) => {
+    const newName = document.getElementById("changeNickname").value;
+    let newVisibility = document.getElementById("visibility").value;
+
+    document.getElementById("yourNick").textContent = newName;
+    document.getElementById("yourNickname").textContent = newName;
+    document.getElementById("yourID").textContent = newName + "#1";
+
+    if (newVisibility == "online") {
+      yourStatus.style.color = "rgb(109, 170, 109)";
+    }
+    if (newVisibility == "dnd") {
+      yourStatus.style.color = "red";
+      newVisibility = "do not disturb";
+    }
+    if (newVisibility == "offline") {
+      yourStatus.style.color = "#B2B2B2";
+    }
+
+    document.getElementById("yourStatus").textContent = newVisibility;
+    if (newAvatar !== null) {
+      document.getElementById("pfp").src = newAvatar;
+    }
+  });
 </script>
