@@ -169,7 +169,7 @@ img {
 }
 .chatHeader .statusFriendHeader {
   margin-left: 20px;
-  font-size: 3vh;
+  font-size: 2vh;
   font-weight: 400;
   margin-top: -3vh;
   color: rgba(53, 156, 62, 0.521);
@@ -335,5 +335,6 @@ img {
     font-size: 4vh;
   }
 }
+
 
 
